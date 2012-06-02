@@ -15,7 +15,7 @@ func form(val string) string {
 }
 
 func main() {
-    web.Get("/", form)
-    web.Post("/blah/upload", gotUploadRequest)
+    web.Get("/(.*)", form)
+    web.Post("/upload(.*)", gotUploadRequest)
     web.Run("0.0.0.0:8080")
 }
